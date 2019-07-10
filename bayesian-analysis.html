@@ -13150,7 +13150,7 @@ $( document ).ready(function(){
 <p>These outcomes can be represented in the <a href="https://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a>, for instance, the reported performance of iBorderCtrl is (see Table IV in [5]):</p>
 <table>
 <thead><tr>
-<th>Test Result\Ground Truth</th>
+<th>Test Result\ Ground Truth</th>
 <th>Lie</th>
 <th>no-lie</th>
 </tr>
@@ -13158,20 +13158,20 @@ $( document ).ready(function(){
 <tbody>
 <tr>
 <td>Test positive</td>
-<td>75.55%</td>
-<td>26.34%</td>
+<td>73.66%</td>
+<td>24.45%</td>
 </tr>
 <tr>
 <td>Test negative</td>
-<td>24.45%</td>
-<td>73.66%</td>
+<td>26.34%</td>
+<td>75.55%</td>
 </tr>
 </tbody>
 </table>
 <p>How we interpret this performance:</p>
 <ul>
-<li>If the person lies, there is a 75.55% of chances of having a positive test (true positive) and 24.45% of having a negative test (false negative). </li>
-<li>If the person tells the truth, there is a 26.34% of chance the test will be positive (false positive) and 73.66% the test will be negative (true negative). </li>
+<li>If the person lies, there is a 73.66% of chances of having a positive test (true positive) and 26.34% of having a negative test (false negative). </li>
+<li>If the person tells the truth, there is a 24.45% of chance the test will be positive (false positive) and 75.55% the test will be negative (true negative). </li>
 </ul>
 <p>Some notes on tests and probability (adapted from [1]):</p>
 <ul>
@@ -13186,10 +13186,9 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Bayes'-Theorem">Bayes' Theorem<a class="anchor-link" href="#Bayes'-Theorem">&#182;</a></h2><figure>
-  <img src="pics/Bayes_Theorem.png" alt="Bayes Theorem" style="width:50%">
-  <figcaption style="text-align:center" >Bayes' Theorem summary. Source <a href="https://betterexplained.com/articles/an-intuitive-and-short-explanation-of-bayes-theorem/">Betterexplained</a>.</figcaption>
-</figure><p>The probability of an event is the number of ways it could happen given all possible outcomes. In our case:</p>
+<h2 id="Bayes'-Theorem">Bayes' Theorem<a class="anchor-link" href="#Bayes'-Theorem">&#182;</a></h2><p><img src="pics/Bayes_Theorem.png" alt="Bayes Theorem summary"></p>
+<p>Bayes' Theorem summary. Source <a href="https://betterexplained.com/articles/an-intuitive-and-short-explanation-of-bayes-theorem/">Betterexplained</a></p>
+<p>The probability of an event is the number of ways it could happen given all possible outcomes. In our case:</p>
 \begin{align}
 \text{Probability} &amp;= \frac{\text{desired event}}{\text{all posibilities}} \\
 P(\text{Lie}\mid\text{+}) &amp;= \frac{P(\text{+}\mid\text{Lie}) P(\text{Lie})}{P(+)} \\
@@ -13197,10 +13196,10 @@ P(\text{Lie}\mid\text{+}) &amp;= \frac{P(\text{+}\mid\text{Lie}) P(\text{Lie})}{
 \end{align}<p>where:</p>
 <ul>
 <li>$P(\text{Lie}\mid\text{+})$ is the probability of having a liar ($\text{Lie}$) given a positive test ($\text{+}$), formally the <em>posterior probability</em>. </li>
-<li>$P(\text{+}\mid\text{Lie})$ is the chance of having a positive test ($\text{+}$) when the person is lying $(\text{Lie}$). This is the chance of true positive (75.55% in our example).</li>
+<li>$P(\text{+}\mid\text{Lie})$ is the chance of having a positive test ($\text{+}$) when the person is lying $(\text{Lie}$). This is the chance of true positive (73.66% in our example).</li>
 <li>$P(Lie)$ is the chance of having of persons that would lie in an interview, formally <em>prior probability</em>. It can be also referred to as <em>frequency</em> or <em>prevalence</em>.</li>
 <li>$P(No-lie)$ is the chance of having a person that is telling the truth ($P(No-lie)=1-P(Lie)$). </li>
-<li>$P(\text{+}\mid\text{No-lie})$ is the chance of having a positive test ($\text{+}$) when the person is not lying $(\text{No-lie}$). This is a false positive (26.34% in our example).</li>
+<li>$P(\text{+}\mid\text{No-lie})$ is the chance of having a positive test ($\text{+}$) when the person is not lying $(\text{No-lie}$). This is a false positive (24.45% in our example).</li>
 </ul>
 <p>The posterior probability is also referred to as <strong>positive predictive value</strong> (PPV) and it answers the question: <strong>provided we have a positive test, what is the probability the person is lying?</strong></p>
 <p>Analogously, we can use the rule to calculate the <strong>negative predictive value</strong> (NPV):</p>
@@ -13218,7 +13217,7 @@ P(\text{No-lie}\mid\text{-}) &amp;= \frac{P(\text{-}\mid\text{No-lie}) P(\text{N
 <h2 id="Formulating-hypothesis-of-scenarios">Formulating hypothesis of scenarios<a class="anchor-link" href="#Formulating-hypothesis-of-scenarios">&#182;</a></h2><h3 id="Correcting-the-confusion-matrix">Correcting the confusion matrix<a class="anchor-link" href="#Correcting-the-confusion-matrix">&#182;</a></h3><p>We can use the prevalence or prior probability to update the confusion matrix to estimate the chances of all the four possible results of the test. Assuming $P(Lie)=0.15$:</p>
 <table>
 <thead><tr>
-<th>Test Result\Ground Truth</th>
+<th>Test Result\ Ground Truth</th>
 <th>Lie</th>
 <th>No-lie</th>
 </tr>
@@ -13238,7 +13237,7 @@ P(\text{No-lie}\mid\text{-}) &amp;= \frac{P(\text{-}\mid\text{No-lie}) P(\text{N
 </table>
 <table>
 <thead><tr>
-<th>Test Result\Ground Truth</th>
+<th>Test Result\ Ground Truth</th>
 <th>Lie (15%)</th>
 <th>No-lie (85%)</th>
 </tr>
@@ -13246,20 +13245,20 @@ P(\text{No-lie}\mid\text{-}) &amp;= \frac{P(\text{-}\mid\text{No-lie}) P(\text{N
 <tbody>
 <tr>
 <td>Test positive</td>
-<td>0.15x0.7555=<br>0.1133</td>
-<td>0.85x0.2634=<br>0.2239</td>
+<td>0.15x0.7366=<br>0.1105</td>
+<td>0.85x0.2445=<br>0.2078</td>
 </tr>
 <tr>
 <td>Test negative</td>
-<td>0.15x0.2445=<br>0.0367</td>
-<td>0.85x0.7366=<br>0.6261</td>
+<td>0.15x0.2634=<br>0.0395</td>
+<td>0.85x0.7555=<br>0.6422</td>
 </tr>
 </tbody>
 </table>
 <p>Assuming $P(Lie)=0.01$:</p>
 <table>
 <thead><tr>
-<th>Test Result\Ground Truth</th>
+<th>Test Result\ Ground Truth</th>
 <th>Lie (1%)</th>
 <th>No-lie (99%)</th>
 </tr>
@@ -13267,17 +13266,17 @@ P(\text{No-lie}\mid\text{-}) &amp;= \frac{P(\text{-}\mid\text{No-lie}) P(\text{N
 <tbody>
 <tr>
 <td>Test positive</td>
-<td>0.01x0.7555=<br>0.0076</td>
-<td>0.99x0.2634=<br>0.2608</td>
+<td>0.01x0.7366=<br>0.0074</td>
+<td>0.99x0.2445=<br>0.2421</td>
 </tr>
 <tr>
 <td>Test negative</td>
-<td>0.01x0.2445=<br>0.0024</td>
-<td>0.99x0.7366=<br>0.7292</td>
+<td>0.01x0.2634=<br>0.0026</td>
+<td>0.99x0.7555=<br>0.7479</td>
 </tr>
 </tbody>
 </table>
-<p>In absolute numbers, in a population of 1000 persons, with 10 of liars (1%), the test will discover 7 liars, but will wrongly label as liars 260 innocent people. In other words, to discover one actual liar the test will wrongly classify 65 people that are telling the truth.</p>
+<p>In absolute numbers, in a population of 1000 persons with 10 liars (1%), the test will discover 7 liars, but will wrongly label as liars 242 innocent people. In other words, to discover one actual liar the test will wrongly classify 34 people that are actually telling the truth. The test will correctly classify as non-liars 747 people.</p>
 
 </div>
 </div>
@@ -13287,21 +13286,21 @@ P(\text{No-lie}\mid\text{-}) &amp;= \frac{P(\text{-}\mid\text{No-lie}) P(\text{N
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Posterior-probability">Posterior probability<a class="anchor-link" href="#Posterior-probability">&#182;</a></h3><p>$Lie$ is called <em>hypothesis</em> whose probability may be affected by data (evidence or test). By varying $P(Lie)$ we can observe the variation of the posterior probability under different hypotheses. For example, we can calculate the <em>posterior probability</em> (<strong>positive predictive value</strong>, PPV) with the hypothesis of 15% of liars ($P(Lie)=0.15$) in the population that will be screened:</p>
 \begin{align}
-P(\text{Liar}\mid\text{+}) &amp;= \frac{0.7555 \times 0.15}{0.7555 \times 0.15 + 0.2634 \times 0.85} \\
-&amp;\approx 33.61\%
+P(\text{Liar}\mid\text{+}) &amp;= \frac{0.7366 \times 0.15}{0.7366 \times 0.15 + 0.2445 \times 0.85} \\
+&amp;\approx 34.71\%
 \end{align}<p>And the expected rate of false positives (<strong>false discovery rate</strong>, FDR):</p>
 \begin{align}
-P(\text{No-liar}\mid\text{+}) &amp;= 1-P(\text{Liar}\mid\text{+})=1-0.3529  \\
-&amp;\approx 66.39\%
-\end{align}<p>This means that, in a scenario of 15% of liars, 33.61% of positive tests will correspond to actual liars crossing the borders and 66.39% will correspond to false positives. This performance decay that might seem counterintuitive can be explained by the <a href="https://en.wikipedia.org/wiki/Base_rate_fallacy">base rate fallacy</a>.</p>
+P(\text{No-liar}\mid\text{+}) &amp;= 1-P(\text{Liar}\mid\text{+})=1-0.3471  \\
+&amp;\approx 65.29\%
+\end{align}<p>This means that, in a scenario of 15% of liars, 34.71% of positive tests will correspond to actual liars crossing the borders and 65.29% will correspond to false positives. This performance decay that might seem counterintuitive can be explained by the <a href="https://en.wikipedia.org/wiki/Base_rate_fallacy">base rate fallacy</a>.</p>
 <p>Analogously, we can calculate the <strong>negative predictive value</strong> (NPV) with the Bayes' Theorem:</p>
 \begin{align}
-P(\text{No-liar}\mid\text{-}) &amp;= \frac{0.7366 \times 0.85}{0.7366 \times 0.85 + 0.2634 \times 0.15} \\
-&amp;\approx 94.46\%\\
+P(\text{No-liar}\mid\text{-}) &amp;= \frac{0.7555 \times 0.85}{0.7555 \times 0.85 + 0.2445 \times 0.15} \\
+&amp;\approx 94.20\%\\
 \end{align}<p>And the expected rate of false negatives (<strong>false omission rate</strong>, FOR)): 
 \begin{align}
 P(\text{Liar}\mid\text{-}) &amp;= 1-P(\text{No-liar}\mid\text{-})=1-0.9446  \\
-&amp;\approx 5.53\%
+&amp;\approx 5.79\%
 \end{align}</p>
 
 </div>
@@ -13352,10 +13351,10 @@ P(\text{Liar}\mid\text{-}) &amp;= 1-P(\text{No-liar}\mid\text{-})=1-0.9446  \\
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Pr(E|H) Chance of a positive test (E) given there is a liar (H). </span>
 <span class="c1"># This is the chance of a true positive. Also sensitivity</span>
-<span class="n">PrEH</span> <span class="o">=</span> <span class="mf">0.7555</span>
+<span class="n">PrEH</span> <span class="o">=</span> <span class="mf">0.7366</span>
 <span class="c1"># Chance of a positive test (E) given that the person wasn&#39;t a lying. </span>
 <span class="c1"># This is the probability of a false positive, also (1-specificity)</span>
-<span class="n">PrEnH</span> <span class="o">=</span> <span class="mf">0.2634</span>
+<span class="n">PrEnH</span> <span class="o">=</span> <span class="mf">0.2445</span>
 
 <span class="c1"># Test the example</span>
 <span class="n">PrH</span> <span class="o">=</span> <span class="mf">0.15</span>
@@ -13379,7 +13378,7 @@ P(\text{Liar}\mid\text{-}) &amp;= 1-P(\text{No-liar}\mid\text{-})=1-0.9446  \\
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>PrHE=0.33606156309772695 - PrnHnE=0.9446653137895396
+<pre>PrHE=0.3471089958060412 - PrnHnE=0.9420406786125556
 </pre>
 </div>
 </div>
@@ -13496,8 +13495,8 @@ P(\text{Liar}\mid\text{-}) &amp;= 1-P(\text{No-liar}\mid\text{-})=1-0.9446  \\
 <h3 id="Thermal-analysis-to-screen-refugees">Thermal analysis to screen refugees<a class="anchor-link" href="#Thermal-analysis-to-screen-refugees">&#182;</a></h3><p>Last December the University of Granada published an interview with one of the authors of a system to spot liars based on <em>the Pinocchio Effect</em>. The methods use thermography to detect an increase of temperature in the nose of people who are lying while answering a question. The authors propose to use the tool to screen persons at refugee tamps to know "<em>what is the real purpose of people trying to cross borders between countries</em>" [7].</p>
 <p>We can get the TP and FP from the journal publication [6]:</p>
 <ul>
-<li>$P(\text{+}\mid\text{Lie})=0.80$</li>
-<li>$P(\text{+}\mid\text{Non-lie})=0.20$</li>
+<li>$P(\text{+}\mid\text{Lie})=0.85$</li>
+<li>$P(\text{+}\mid\text{Non-lie})=0.25$</li>
 </ul>
 <p>From the interview we don't have clear what the authors mean with <em>the real purpose of people</em> at refugee camps. Let's assume this purpose can be, for instance, to spot terrorists that would be hypothetically hidden in a refugee camp or are trying to enter Europe. So we want to know whether it would be useful to screen all the refugees using a lie detector to spot terrorists.</p>
 <p>We can calculate the prior of refugees that might be related to terrorism by using the data provided by the conservative think tank 'The Heritage Foundation' which claims, with no sources, that there where 44 refugees or asylum seekers involved in terrorist plots in Europe from 2014 to 2017. Note this is an unrealistic scenario with more people related to terrorism that actually are. In that period, we had 3,915,445 first time asylum applicants in Europe [9]. Then, we have the prior of refugees that during an interview will answer they are not terrorist, but they are:</p>
@@ -13505,7 +13504,7 @@ P(\text{Liar}\mid\text{-}) &amp;= 1-P(\text{No-liar}\mid\text{-})=1-0.9446  \\
 <p>So we can update the relative confusion matrix:</p>
 <table>
 <thead><tr>
-<th>Test Result\Ground Truth</th>
+<th>Test Result\ Ground Truth</th>
 <th>Lie (0.0011%)</th>
 <th>No-lie (99.9989%)</th>
 </tr>
@@ -13513,20 +13512,20 @@ P(\text{Liar}\mid\text{-}) &amp;= 1-P(\text{No-liar}\mid\text{-})=1-0.9446  \\
 <tbody>
 <tr>
 <td>Test positive</td>
-<td>0.000011x0.80=<br>0.0000088</td>
-<td>0.999989x0.20=<br>0.1999978</td>
+<td>0.000011x0.85=<br>0.00000935</td>
+<td>0.999989x0.25=<br>0.24999725</td>
 </tr>
 <tr>
 <td>Test negative</td>
-<td>0.000011x0.20=<br>0.0000022</td>
-<td>0.999989x0.80=<br>0.7999912</td>
+<td>0.000011x0.15=<br>0.00000165</td>
+<td>0.999989x0.75=<br>0.74999175</td>
 </tr>
 </tbody>
 </table>
-<p>We can build the absolute confusion matrix for the population of 4 million asylum seekers:</p>
+<p>We can build the absolute confusion matrix for the population of ~4 million asylum seekers:</p>
 <table>
 <thead><tr>
-<th>Test Result\Ground Truth</th>
+<th>Test Result\ Ground Truth</th>
 <th>Lie</th>
 <th>No-lie</th>
 </tr>
@@ -13534,24 +13533,24 @@ P(\text{Liar}\mid\text{-}) &amp;= 1-P(\text{No-liar}\mid\text{-})=1-0.9446  \\
 <tbody>
 <tr>
 <td>Test positive</td>
-<td>35</td>
-<td>799991</td>
+<td>36</td>
+<td>978850</td>
 </tr>
 <tr>
 <td>Test negative</td>
-<td>8</td>
-<td>3199964</td>
+<td>6</td>
+<td>2936551</td>
 </tr>
 </tbody>
 </table>
-<p>Therefore, to discover one terrorist, 22856+1 persons would need to be investigated after been labelled as liars by the system.</p>
+<p>Therefore, to discover one terrorist, ~2719 persons would need to be investigated after been labelled as liars by the system.</p>
 <p>We can calculate the posterior probabilities of having an actual liar when the thermal analysis test is positive (PPV) and having an person answering the truth when the test is negative (NPV):</p>
 \begin{align}
-P(\text{Liar}\mid\text{+}) &amp;= \frac{0.80 \times 0.000011}{0.80 \times 0.000011 + 0.20 \times 0.999988} \\
-&amp;\approx 0.004495\%\\
-P(\text{No-liar}\mid\text{-}) &amp;= \frac{0.80 \times 0.999988}{0.20 \times 0.000011 + 0.80 \times 0.999988}  \\
-&amp;\approx 99.9997\%
-\end{align}<p>On the one hand, this means that <em>only 4 in a population of 1000 terrorists will be detected by the lie detector</em>. On the other hand, the NPV is 99.9997%. The expected rate of false positives is 0.2.</p>
+P(\text{Liar}\mid\text{+}) &amp;= \frac{0.85 \times 0.000011}{0.85 \times 0.000011 + 0.25 \times 0.999988} \\
+&amp;\approx 0.0037\%\\
+P(\text{No-liar}\mid\text{-}) &amp;= \frac{0.75 \times 0.999988}{0.15 \times 0.000011 + 0.75 \times 0.999988}  \\
+&amp;\approx 99.9998\%
+\end{align}<p>In relative numbers, this means that <em>only 9 terrorists hidden in a population of 1 million will be detected by the lie detector</em> whereas 249997 innocent people would need to be unnecessarily investigated.</p>
 
 </div>
 </div>
@@ -13570,9 +13569,9 @@ P(\text{No-liar}\mid\text{-}) &amp;= \frac{0.80 \times 0.999988}{0.20 \times 0.0
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Pr(E|H) Chance of a positive test (E) given there is a liar (H). This is the chance of a true positive.</span>
-<span class="n">PrEH</span> <span class="o">=</span> <span class="mf">0.80</span>
+<span class="n">PrEH</span> <span class="o">=</span> <span class="mf">0.85</span>
 <span class="c1"># Chance of a positive test (E) given that the person wasn&#39;t a lying. This is the probability of a  false positive</span>
-<span class="n">PrEnH</span> <span class="o">=</span> <span class="mf">0.20</span>
+<span class="n">PrEnH</span> <span class="o">=</span> <span class="mf">0.25</span>
 
 <span class="c1"># posterior of true positives / positive predictive value</span>
 <span class="n">vPrHE</span> <span class="o">=</span> <span class="n">vfunc</span><span class="p">(</span><span class="n">PrEH</span><span class="p">,</span> <span class="n">vPrH</span><span class="p">,</span> <span class="n">PrEnH</span><span class="p">)</span>
@@ -13672,9 +13671,8 @@ P(\text{No-liar}\mid\text{-}) &amp;= \frac{0.80 \times 0.999988}{0.20 \times 0.0
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Decision-tree-of-events">Decision tree of events<a class="anchor-link" href="#Decision-tree-of-events">&#182;</a></h2><p>To sum up all the concepts we present the decision tree of events of the example of iBorderCtrl to relate the corrected test outcomes and the posterior probabilities.</p>
-<figure>
-  <img src="pics/decission-tree.png" alt="Decission tree of events and actual probabilities" style="width:80%">
-</figure><h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2><ul>
+<p><img src="pics/decision-tree.png" alt="Decision tree of events"></p>
+<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2><ul>
 <li>Massive screening of entire populations to look for events through a flawed test is problematic </li>
 <li>Performance analysis should be corrected with the prior probability of the event of interest</li>
 <li>None of the proposed tests will be able to detect illegalised migrants or terrorists with the so-called lie detectors, even if they really existed </li>
